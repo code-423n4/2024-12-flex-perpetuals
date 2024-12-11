@@ -169,9 +169,6 @@ Major Roles Except owner:
 src/handlers/IntentHandler.sol
 role: intentExecutors
 
-src/handlers/LiquidityHandler.sol
-role: orderExecutors
-
 src/staking/FTCHook.sol
 role: whitelistedCallers (external contact)
 
