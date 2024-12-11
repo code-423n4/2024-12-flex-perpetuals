@@ -1,0 +1,105 @@
+{
+  "proxyAdmin": "0x415DC1E7B6DF1fB63fb1fFabf21AFB1776898E0C",
+  "multicall": "",
+  "timelock": "",
+  "safe": "",
+  "storages": {
+    "config": "0x4D4f976b16cb16bad32Fa5dcF74Db1c2261d6993",
+    "perp": "0x2cEDAD0049b1aab530e38f7C2704620e75735df4",
+    "vault": "0x3B333c7BD112D4fb977c796d7a9452e752c55983"
+  },
+  "handlers": {
+    "bot": "0x405Ecc80cca526d87Ad0Fac8321dE5e548E7F5f4",
+    "crossMargin": "0xb78564BF30197De115d2A8489EC75018624d997d",
+    "limitTrade": "0x94c653eCf5D6E0Dbbaf360E896C1F9dCB8976f1d",
+    "liquidity": "0x77F8BEb1E33C2b24B3fba9B02301439f77aAc826",
+    "rebalanceHLP": "",
+    "ext01": "0x726cEdaEC66A703bC090BB4FaE37c865507B075c",
+    "rebalanceHLPv2": "",
+    "intent": "0xF1AD210F078491d42D5545B0Db37f6D58B7eF015"
+  },
+  "helpers": {
+    "trade": "0xF5C7E6f783801FbFbc12A5B2FD70644aaaa48683",
+    "limitTrade": "0xE69d59b3fC13210D0923d829f77C5e9C49AFB1D3",
+    "tradeOrder": "0xb29650ADa5fd0A0f5A22A1c86B100eB7d96302DB",
+    "intentBuilder": "0x606a3aC95101eAF265FAb2Afa0D6f8C7D0Beb3FA"
+  },
+  "services": {
+    "crossMargin": "0x94Ec5bf82017F069123aEd10A15701ffE4406c0C",
+    "liquidity": "0x839172a5e817890fD10023b14b443935Ac435CA7",
+    "liquidation": "0x41F0404BD540816E5B0577e0722CF7388d25BD9b",
+    "trade": "0x1B583E767915d2026F8eeFecE0DF71b23087fFa4",
+    "rebalanceHLP": "",
+    "rebalanceHLPv2": "",
+    "gas": "0xc300B7Ab461252de70d9BE26bDE2B8346f4bd77A"
+  },
+  "oracles": {
+    "ecoPyth2": "0xd8E77D0efCb72a8C464954f67B072181039CbC6E",
+    "pythAdapter": "0x45A76757dBA9a501EE3fC1cD83fe60410897dC58",
+    "middleware": "0xDA0EEd302b86c3a3DaF6661C8A0F27317Bb8CD7C",
+    "ecoPythCalldataBuilder3": "0xaF0498Bea088b672694E731AF069CbD8DD38b1cA",
+    "unsafeEcoPythCalldataBuilder3": "0x615295D3A2461F1586388bb1411bcDd6e520f0bf",
+    "onChainPriceLens": "0xB0FD436eD1B83DcDCfBa3f008EC7Bf714E3f2473",
+    "calcPriceLens": "0x1935ab1816997d9E33d5Fe46caE84A9d7DF0D75e",
+    "priceAdapters": {
+      "wstEth": "",
+      "hlp": "",
+      "dix": "0x082B04Bb828e82cD005da3A1f084Be2c500A14C9"
+    },
+    "orderbook": "0xf41cF38686c43A27A99828c3f4ec4eDA62d5Ebc1"
+  },
+  "tokens": {
+    "hlp": "0x7637d382707DA0CA3E45371a845c21e584e50568",
+    "flp": "0x7637d382707DA0CA3E45371a845c21e584e50568",
+    "weth": "0xdA5E521161CfD7c2c3381529511C91710DFc7242",
+    "usdc": "0xeed135DFd92845f718AB1341fA6c8a9d3372bd21",
+    "usdt": "",
+    "wbtc": "0x97Ebb91EE72A99312dE16dD4De2C8eaeBFd14F57",
+    "dai": "0x4b9B83aE09086b38DF23F09B7652aD01aD4d672F",
+    "traderLoyaltyCredit": "0x94014E3EC0Ab12f0712E5190Dd0482868FE7b177",
+    "flexTradeCredits": "0x94014E3EC0Ab12f0712E5190Dd0482868FE7b177",
+    "wstEth": ""
+  },
+  "vendors": {
+    "uniswap": {
+      "permit2": "0x000000000022D473030F116dDEE9F6B43aC78BA3",
+      "universalRouter": "0x050E797f3625EC8785265e1d9BDd4799b97528A1"
+    },
+    "aerodrome": {
+      "router": "0x02080Ac9C224246b07D0210900eCCCC8ABDc827C",
+      "factory": "0x5729ffC96302B38062b0d3Bb61a359913f2853e2"
+    }
+  },
+  "strategies": {
+    "erc20Approve": ""
+  },
+  "hooks": {
+    "tradingStaking": "0x06B9cD98D43B2776952248A92a90D51B4253c593",
+    "tlc": "0xBb690E572330404f1a2eE7fcC0EA92477982020A"
+  },
+  "calculator": "0x19b6ED29d45492786DC540D6C4F848a955015862",
+  "adaptiveFeeCalculator": "0xba403E94A617E6eD1Cbe9a10001c847Ae6852a55",
+  "accountAbstraction": {
+    "entryPoint": "",
+    "factory": ""
+  },
+  "staking": {
+    "trading": "0x3eaFaEEB0a612a2a1C4799A6Bd1cc73CB5d3eA93",
+    "tlc": "0xb05aB8A7818BfbD1E51e9cB1F5c4422dfbDE3dE5",
+    "hlp": "0x0e910fDf646f7869821460BD83eC712626bB8ADB"
+  },
+  "rewardDistributor": "0x41669E897A9c4608df7918976F3b1081C6c4DC2F",
+  "reader": {
+    "order": "0x3Bc5ef83e3540a85EAa004761fEC87cA15dAcCFf",
+    "position": "0x3F6067166C52d0e43e702E8B2860118Fc6D4D75c",
+    "liquidation": "0x49e0588196D567FfE774f1aEbA469a9a816945F8",
+    "collateral": ""
+  },
+  "extension": {
+    "switchCollateralRouter": "0x3323479cF58B4018917BD57F1E2ce15c143e9DD2",
+    "dexter": {
+      "uniswapV3": "0xf2Ce3ed5bB7de07c8cC07926A042bA0653C4Ef4f",
+      "aerodrome": "0x4302a6160FAe1F9CaFd6Ce9C86CFC6BeBBA1c3bE"
+    }
+  }
+}

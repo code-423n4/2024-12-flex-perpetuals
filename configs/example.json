@@ -1,0 +1,57 @@
+{
+  "storages": {
+    "config": "",
+    "perp": "",
+    "vault": ""
+  },
+  "handlers": {
+    "bot": "",
+    "crossMargin": "",
+    "limitTrade": "",
+    "liquidity": ""
+  },
+  "helpers": {
+    "trade": "",
+    "limitTradeHelper": ""
+  },
+  "services": {
+    "crossMargin": "",
+    "liquidity": "",
+    "liquidation": "",
+    "trade": ""
+  },
+  "oracles": {
+    "pyth": "",
+    "pythAdapter": "",
+    "sglpStakedAdapter": "",
+    "middleware": "",
+    "ecoPythCalldataBuilder": ""
+  },
+  "tokens": {
+    "hlp": "",
+    "weth": "",
+    "sglp": "",
+    "traderLoyaltyCredit": ""
+  },
+  "yieldSources": {
+    "gmx": {
+      "glpManager": "",
+      "rewardRouterV2": "",
+      "rewardTracker": ""
+    }
+  },
+  "strategies": {
+    "stakedGlpStrategy": "",
+    "convertedGlpStrategy": ""
+  },
+  "calculator": "",
+  "accountAbstraction": {
+    "entryPoint": "",
+    "factory": ""
+  },
+  "staking": {
+    "trading": "",
+    "tlc": "",
+    "hlp": ""
+  }
+}

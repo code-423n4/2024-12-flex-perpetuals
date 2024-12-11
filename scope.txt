@@ -1,0 +1,6 @@
+./src/contracts/FLP.sol
+./src/storages/ConfigStorage.sol
+./src/handlers/IntentHandler.sol
+./src/tokens/FlexTradeCredits.sol
+./src/staking/FTCHook.sol
+./src/extensions/dexters/AerodromeDexter.sol
