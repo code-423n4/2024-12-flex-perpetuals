@@ -149,7 +149,33 @@ Any (all possible ERC20s)
 
 ## Main invariants
 
-Will be sent separately
+1. src/contracts/FLP.sol
+FLP is a copy of HLP token
+- mintable/burnable only by LiquidityService.sol that mint/burn it with user deposit/withdrawn to liquidity
+HLP(_vars.configStorage.hlp()).mint(_receiver, _vars.mintAmount);
+- transferable token
+
+2. src/extensions/dexters/AerodromeDexter.sol
+- should be administered only by owner
+- must swap tokens (called by SwitchCollateralrouter.execute) or revert the transaction on swap error. As run() is public, it shouldn't be used maliciously.
+
+3. src/handlers/IntentHandler.sol
+- should be administered by owner only
+- execution must be limited only by IntentExecutors
+- contact signs transactions on client side and Trading orders should be signed only by client private key. Contact must validate this signature so no one can forge an electronic signature or execute transactions of another user.
+
+4. src/staking/FTCHook.sol FTCHook is a clone of TLCHook.
+- should be administered only by owner
+- It should be called only by TradeService as it will be a whitelistedCallers.
+
+5. src/storages/ConfigStorage.sol
+- As it's a configuration contracts should be changed only by owner or whitelisted callers.
+
+6. src/tokens/FlexTradeCredits.sol
+FlexTradeCredits is a clone of TraderLoyaltyCredit (TLC).
+- must be minted only by whitelisted minters (FTCHook).
+- represents activity of a user (trader) for current epoch only. So each epoch balances
+must be independent and should be resetted with new epoch (each week)
 
 
 ✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
