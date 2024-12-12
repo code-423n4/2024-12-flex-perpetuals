@@ -171,46 +171,35 @@ Only the changes made to the files within the defined scope need to be audited.
 # Additional context
 
 ## Main invariants
-1. `src/contracts/FLP.sol`
-FLP is a copy of `HLP` token with the following characteristics:
-- Only mintable/burnable by `LiquidityService.sol` that handles mint/burn operations with user deposit/withdrawn to liquidity
- - Example: `HLP(_vars.configStorage.hlp()).mint(_receiver, _vars.mintAmount);`
-- Functions as a transferable token
+
+1. `src/contracts/FLP.sol`\
+  FLP is a copy of HLP token
+    - mintable/burnable only by LiquidityService.sol that mint/burn it with user deposit/withdrawn to liquidity\
+      `HLP(_vars.configStorage.hlp()).mint(_receiver, _vars.mintAmount);`
+    - transferable token
 
 2. `src/extensions/dexters/AerodromeDexter.sol`
-Key requirements:
-- Administration limited to `owner` only
-- Must either successfully swap tokens (when called by `SwitchCollateralrouter.execute`) or revert the transaction on swap error
-- Since `run()` is public, implementation must prevent malicious usage
+    - should be administered only by owner
+    - must swap tokens (called by SwitchCollateralrouter.execute) or revert the transaction on swap error. As run() is public, it shouldn't be used maliciously.
 
 3. `src/handlers/IntentHandler.sol`
-Security requirements:
-- Administration restricted to `owner` only 
-- Execution permissions limited to `IntentExecutors` only
-- Trading order signatures must:
- - Be signed on client side using client private key
- - Have signature validation to prevent forgery
- - Prevent unauthorized transaction execution
+    - should be administered by owner only
+    - execution must be limited only by IntentExecutors
+    - contact signs transactions on client side and Trading orders should be signed only by client private key. Contact must validate this signature so no one can forge an electronic signature or execute transactions of another user.
 
-4. `src/staking/FTCHook.sol`
-`FTCHook` (clone of `TLCHook`):
-- Administration restricted to `owner` only
-- Call permissions limited to `TradeService` via `whitelistedCallers`
+4. `src/staking/FTCHook.sol`\
+  FTCHook is a clone of TLCHook.
+    - should be administered only by owner
+    - It should be called only by TradeService as it will be a whitelistedCallers.
 
-5. `src/storages/ConfigStorage.sol`
-Access control:
-- Configuration changes restricted to:
- - `owner`
- - `whitelistedCallers`
+6. `src/storages/ConfigStorage.sol`
+    - As it's a configuration, contracts should be changed only by owner or whitelisted callers.
 
-6. `src/tokens/FlexTradeCredits.sol`
-`FlexTradeCredits` (clone of `TraderLoyaltyCredit`/`TLC`):
-- Minting permissions limited to whitelisted minters (`FTCHook`)
-- Represents user (trader) activity for current epoch only
-- Epoch-specific requirements:
- - Balances must be independent between epochs
- - Reset required with each new epoch (weekly)
- - Each epoch's balances managed separately
+7. `src/tokens/FlexTradeCredits.sol`\
+  FlexTradeCredits is a clone of TraderLoyaltyCredit (TLC).
+    - must be minted only by whitelisted minters (FTCHook).
+    - represents activity of a user (trader) for current epoch only. So each epoch balances must be independent and should be resetted with new epoch (each week)
+
 
 ## Attack ideas (where to focus for bugs)
 None
