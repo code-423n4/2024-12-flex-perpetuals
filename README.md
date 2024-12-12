@@ -222,7 +222,7 @@ N/A
 ```bash
 git clone --recursive https://github.com/code-423n4/2024-12-flex-perpetuals
 cd 2024-12-flex-perpetuals
-forge test
+ARBITRUM_ONE_FORK=https://arb1.arbitrum.io/rpc forge test
 ```
 To run code coverage
 ```bash
@@ -233,7 +233,6 @@ To run gas benchmarks
 forge test --gas-report
 ```
 
-✅ SCOUTS: Add a screenshot of your terminal showing the gas report
 ✅ SCOUTS: Add a screenshot of your terminal showing the test coverage
 
 ## Miscellaneous
