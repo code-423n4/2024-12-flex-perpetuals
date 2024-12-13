@@ -120,7 +120,9 @@ contract LiquidityHandler_Getter is LiquidityHandler_Base {
     }
 
     function testCorrectness_getOrders_timestampCorrectness() external {
-        vm.warp(block.timestamp + 100);
+        uint256 startTsSec = block.timestamp + 100;
+        vm.warp(startTsSec);
+        vm.warp(startTsSec);
 
         // Open 2 orders
         _createOrder(); // Intention: success
@@ -131,17 +133,19 @@ contract LiquidityHandler_Getter is LiquidityHandler_Base {
             ILiquidityHandler.LiquidityOrder[] memory _orders = liquidityHandler.getActiveLiquidityOrders(2, 0);
 
             assertEq(_orders[0].orderId, 0);
-            assertEq(_orders[0].createdTimestamp, 101);
+            assertEq(_orders[0].createdTimestamp, startTsSec, "order0 createdTimestamp");
             assertEq(_orders[0].executedTimestamp, 0);
             assertEq(uint(_orders[0].status), 0); // pending
 
             assertEq(_orders[1].orderId, 1);
-            assertEq(_orders[1].createdTimestamp, 101);
+            assertEq(_orders[1].createdTimestamp, startTsSec, "order1 createdTimestamp");
             assertEq(_orders[1].executedTimestamp, 0);
             assertEq(uint(_orders[1].status), 0); // pending
         }
 
-        vm.warp(block.timestamp + 100);
+        vm.warp(startTsSec + 100);
+        uint256 executeTsSec = block.timestamp;
+        assertGt(executeTsSec, startTsSec, "timestamp must be increased");
 
         // Execute
         _executeOrder(1);
@@ -157,13 +161,13 @@ contract LiquidityHandler_Getter is LiquidityHandler_Base {
             );
 
             assertEq(_orders[0].orderId, 0);
-            assertEq(_orders[0].createdTimestamp, 101);
-            assertEq(_orders[0].executedTimestamp, 201);
+            assertEq(_orders[0].createdTimestamp, startTsSec, "order0 createdTimestamp after executed");
+            assertEq(_orders[0].executedTimestamp, executeTsSec, "order0 executedTimestamp after executed");
             assertEq(uint(_orders[0].status), 1); // success
 
             assertEq(_orders[1].orderId, 1);
-            assertEq(_orders[1].createdTimestamp, 101);
-            assertEq(_orders[1].executedTimestamp, 201);
+            assertEq(_orders[1].createdTimestamp, startTsSec, "order1 createdTimestamp after executed");
+            assertEq(_orders[1].executedTimestamp, executeTsSec, "order1 executedTimestamp after executed");
             assertEq(uint(_orders[1].status), 2); // fail
         }
     }
