@@ -220,9 +220,16 @@ N/A
 ## Running tests
 
 ```bash
-git clone --recursive https://github.com/code-423n4/2024-12-flex-perpetuals
-cd 2024-12-flex-perpetuals
-ARBITRUM_ONE_FORK=https://arb1.arbitrum.io/rpc forge test
+git clone https://github.com/Flex-Community/v2-evm
+cd v2-evm
+git checkout 89707eef78e465db1b3bc34cfea1c99c9de1042e
+git submodule init
+git submodule update --recursive
+docker run -it -v=$(pwd):/app -w=/app node:18 /bin/bash
+[docker]:# yarn
+[docker]:# curl -L https://foundry.paradigm.xyz | bash
+[docker]:# ~/.foundry/bin/foundryup
+[docker]:# ~/.foundry/bin/forge test --no-match-path='test/{fp-fork,fork}/*'
 ```
 To run code coverage
 ```bash
