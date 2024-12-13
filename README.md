@@ -165,7 +165,7 @@ Only the changes made to the files within the defined scope need to be audited.
 | --------------------------------------- | ---------------------------- |
 | `src/contracts/FLP.sol`                 | ERC20            |
 | `src/tokens/FlexTradeCredits.sol`       | ERC721                       |
-| `src/handlers/IntentHandler.sol`        | ERC721  | 
+| `src/handlers/IntentHandler.sol`        | EIP-712  | 
 
 
 # Additional context
