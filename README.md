@@ -244,6 +244,8 @@ To run gas benchmarks (warning: long-running)
 [docker]:# ~/.foundry/bin/forge test --gas-report --match-path='test/{base,handlers/liquidity,integration,invariance,services/liquidity,services/trade}/*'
 ```
 
+![img](https://github.com/code-423n4/2024-12-flex-perpetuals/blob/main/coverage.png?raw=true)
+
 ## Miscellaneous
 Employees of Flex Perpetuals and employees' family members are ineligible to participate in this audit.
 
