@@ -163,8 +163,8 @@ Only the changes made to the files within the defined scope need to be audited.
 
 | Question                                | Answer                       |
 | --------------------------------------- | ---------------------------- |
-| `src/contracts/FLP.sol`                 | ERC20            |
-| `src/tokens/FlexTradeCredits.sol`       | ERC721                       |
+| `src/contracts/FLP.sol`                 | ERC-20            |
+| `src/tokens/FlexTradeCredits.sol`       | ERC-20                    |
 | `src/handlers/IntentHandler.sol`        | EIP-712  | 
 
 
