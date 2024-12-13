@@ -31,8 +31,8 @@ The protocol incorporates secured measurements, including virtual price impact a
 
 Since the code was forked and some contracts were copied, there are aliases for contract names that you can match in the code. These contracts share the same interfaces, so only the contract names have changed, but entities, variables and interfaces in the old contract code remain:
 
-New: `FLP.sol` — Old: HLP, IHLP
-New: `FlexTradeCredits.sol` — Old: TraderLoyaltyCredit, ITraderLoyaltyCredit, TLC
+New: `FLP.sol` — Old: HLP, IHLP\
+New: `FlexTradeCredits.sol` — Old: TraderLoyaltyCredit, ITraderLoyaltyCredit, TLC\
 New: `FTCHook.sol` — Old: ITLCHook, TLCHook.sol
 
 ## Architecture
