@@ -12,7 +12,7 @@
 **Note re: risk level upgrades/downgrades**
 
 Two important notes about judging phase risk adjustments: 
-- High- or Medium-risk submissions downgraded to Low-risk (QA)) will be ineligible for awards.
+- High- or Medium-risk submissions downgraded to Low-risk (QA) will be ineligible for awards.
 - Upgrading a Low-risk finding from a QA report to a Medium- or High-risk finding is not supported.
 
 As such, wardens are encouraged to select the appropriate risk level carefully during the submission phase.
