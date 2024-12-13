@@ -207,10 +207,12 @@ contract TC40 is BaseIntTest_WithActions {
             vm.stopPrank();
         }
     }
+
     function testCorrectness_TC40_TransferCollateralSubAccount_WBTC() external {
         wbtc.mint(ALICE, 0.5 * 1e8);
         _testTransferCollateralSubAccountERC20Helper(address(wbtc), 0.5 * 1e8, 100_000 * 1e30, 0.25 * 1e8, 0.23 * 1e8);
     }
+
     function testCorrectness_TC40_TransferCollateralSubAccount_USDC() external {
         usdc.mint(ALICE, 10_000 * 1e6);
         _testTransferCollateralSubAccountERC20Helper(

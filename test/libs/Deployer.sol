@@ -82,7 +82,7 @@ library Deployer {
      */
 
     function deployHLP(address _proxyAdmin) internal returns (IHLP) {
-        bytes memory _logicBytecode = abi.encodePacked(vm.getCode("./out/HLP.sol/HLP.json"));
+        bytes memory _logicBytecode = abi.encodePacked(vm.getCode("./out/FLP.sol/FLP.json"));
         bytes memory _initializer = abi.encodeWithSelector(bytes4(keccak256("initialize()")));
         address _proxy = _setupUpgradeable(_logicBytecode, _initializer, _proxyAdmin);
         return IHLP(payable(_proxy));
@@ -436,7 +436,7 @@ library Deployer {
         address _tlc,
         address _tlcStaking
     ) internal returns (ITradeServiceHook) {
-        bytes memory _logicBytecode = abi.encodePacked(vm.getCode("./out/TLCHook.sol/TLCHook.json"));
+        bytes memory _logicBytecode = abi.encodePacked(vm.getCode("./out/FTCHook.sol/FTCHook.json"));
         bytes memory _initializer = abi.encodeWithSelector(
             bytes4(keccak256("initialize(address,address,address)")),
             _tradeService,
@@ -603,9 +603,7 @@ library Deployer {
      */
 
     function deployTLCToken(address _proxyAdmin) internal returns (ITraderLoyaltyCredit) {
-        bytes memory _logicBytecode = abi.encodePacked(
-            vm.getCode("./out/TraderLoyaltyCredit.sol/TraderLoyaltyCredit.json")
-        );
+        bytes memory _logicBytecode = abi.encodePacked(vm.getCode("./out/FlexTradeCredits.sol/FlexTradeCredits.json"));
         bytes memory _initializer = abi.encodeWithSelector(bytes4(keccak256("initialize()")));
         address _proxy = _setupUpgradeable(_logicBytecode, _initializer, _proxyAdmin);
         return ITraderLoyaltyCredit(payable(_proxy));

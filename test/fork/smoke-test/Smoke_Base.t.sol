@@ -13,7 +13,7 @@ import {ICalculator} from "@hmx/contracts/interfaces/ICalculator.sol";
 import {PythStructs} from "pyth-sdk-solidity/IPyth.sol";
 
 // to-upgrade contract
-import {HLP} from "@hmx/contracts/HLP.sol";
+import {FLP} from "@hmx/contracts/FLP.sol";
 import {Calculator} from "@hmx/contracts/Calculator.sol";
 
 import {BotHandler} from "@hmx/handlers/BotHandler.sol";
@@ -61,7 +61,7 @@ contract Smoke_Base is ForkEnv {
         // -- UPGRADE -- //
         vm.startPrank(ForkEnv.proxyAdmin.owner());
         Deployer.upgrade("Calculator", address(ForkEnv.proxyAdmin), address(ForkEnv.calculator));
-        Deployer.upgrade("HLP", address(ForkEnv.proxyAdmin), address(ForkEnv.hlp));
+        Deployer.upgrade("FLP", address(ForkEnv.proxyAdmin), address(ForkEnv.hlp));
         Deployer.upgrade("BotHandler", address(ForkEnv.proxyAdmin), address(ForkEnv.botHandler));
         Deployer.upgrade("LimitTradeHandler", address(ForkEnv.proxyAdmin), address(ForkEnv.limitTradeHandler));
         Deployer.upgrade("TradeService", address(ForkEnv.proxyAdmin), address(ForkEnv.tradeService));

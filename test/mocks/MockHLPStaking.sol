@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: BUSL-1.1
 // This code is made available under the terms and conditions of the Business Source License 1.1 (BUSL-1.1).
 // The act of publishing this code is driven by the aim to promote transparency and facilitate its utilization for educational purposes.
-import {HLP} from "@hmx/contracts/HLP.sol";
+import {FLP} from "@hmx/contracts/FLP.sol";
 
 pragma solidity 0.8.18;
 
 contract MockHLPStaking {
-    HLP public hlp;
+    FLP public hlp;
     mapping(address user => uint256 balance) public userTokenAmount;
 
     constructor(address _hlp) {
-        hlp = HLP(_hlp);
+        hlp = FLP(_hlp);
     }
 
     function startSurgeEventDepositTimestamp() external pure returns (uint256) {
