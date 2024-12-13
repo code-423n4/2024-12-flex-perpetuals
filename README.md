@@ -122,7 +122,7 @@ Only the changes made to the files within the defined scope need to be audited.
 | Question                                | Answer                       |
 | --------------------------------------- | ---------------------------- |
 | ERC20 used by the protocol              |       Any (all possible ERC20s)             |
-| Test coverage                           | ✅ SCOUTS: Please populate this after running the test coverage command                          |
+| Test coverage                           | n/a   |
 | ERC721 used  by the protocol            |            None              |
 | ERC777 used by the protocol             |           None                |
 | ERC1155 used by the protocol            |              None            |
@@ -221,27 +221,18 @@ N/A
 ## Running tests
 
 ```bash
-git clone https://github.com/Flex-Community/v2-evm
-cd v2-evm
-git checkout 89707eef78e465db1b3bc34cfea1c99c9de1042e
-git submodule init
-git submodule update --recursive
+git clone --recursive https://github.com/code-423n4/2024-12-flex-perpetuals
+cd 2024-12-flex-perpetuals
 docker run -it -v=$(pwd):/app -w=/app node:18 /bin/bash
 [docker]:# yarn
 [docker]:# curl -L https://foundry.paradigm.xyz | bash
 [docker]:# ~/.foundry/bin/foundryup
 [docker]:# ~/.foundry/bin/forge test --no-match-path='test/{fp-fork,fork}/*'
 ```
-To run code coverage
-```bash
-forge coverage --ir-minimum
-```
 To run gas benchmarks
 ```bash
-forge test --gas-report
+[docker]:# ~/.foundry/bin/forge test --gas-report --no-match-path='test/{fp-fork,fork}/*'
 ```
-
-✅ SCOUTS: Add a screenshot of your terminal showing the test coverage
 
 ## Miscellaneous
 Employees of Flex Perpetuals and employees' family members are ineligible to participate in this audit.
