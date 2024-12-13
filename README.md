@@ -233,11 +233,15 @@ docker run -it -v=$(pwd):/app -w=/app node:18 /bin/bash
 [docker]:# yarn
 [docker]:# curl -L https://foundry.paradigm.xyz | bash
 [docker]:# ~/.foundry/bin/foundryup
-[docker]:# ~/.foundry/bin/forge test --no-match-path='test/{fp-fork,fork}/*'
+[docker]:# ~/.foundry/bin/forge test --match-path='test/{base,handlers/liquidity,integration,invariance,services/liquidity,services/trade}/*'
+```
+To run code coverage (warning: long-running)
+```bash
+[docker]:# ~/.foundry/bin/forge coverage --ir-minimum --match-path='test/{base,handlers/liquidity,integration,invariance,services/liquidity,services/trade}/*'
 ```
 To run gas benchmarks (warning: long-running)
 ```bash
-[docker]:# ~/.foundry/bin/forge test --gas-report --no-match-path='test/{fp-fork,fork}/*'
+[docker]:# ~/.foundry/bin/forge test --gas-report --match-path='test/{base,handlers/liquidity,integration,invariance,services/liquidity,services/trade}/*'
 ```
 
 ## Miscellaneous
