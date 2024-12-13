@@ -209,9 +209,10 @@ None
 | Role                                | Description                       |
 | --------------------------------------- | ---------------------------- |
 | Owner                           | Has administrative authority                |
-| `intentExecutors` in `IntentHandler.sol`  | Trusted                       |
-| `whitelistedCallers` (external contract) in `IntentHandler.sol`  |  Trusted             |
-| `minter` (external contract) in `lexTradeCredits.sol`  | Trusted                       |
+| `intentExecutors` in `IntentHandler.sol`  |  intentExecutors - can only execute validated user's orders                       |
+| `whitelistedCallers` in `IntentHandler.sol`  |  whitelistedCallers - only call Increate/Decrease Position hooks             |
+| `orderExecutors` in `LiquidityHandler.sol` | orderExecutors - can only execute orders |
+| `minter` in `FlexTradeCredits.sol`  | minter can only generate FlexTradeCredits tokens                       |
 
 ## Describe any novel or unique curve logic or mathematical models implemented in the contracts:
 
