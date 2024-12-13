@@ -29,6 +29,12 @@ Flex Perpetuals is HMXv2 fork. HMXv2 is an innovative pool-based perpetual DEX p
 
 The protocol incorporates secured measurements, including virtual price impact and funding fees, to ensure the protection of liquidity providers (LPs) from being overly exposed to a single direction. By implementing these measures, HMXv2 aims to create a more resilient and balanced trading environment.
 
+Since the code was forked and some contracts were copied, there are aliases for contract names that you can match in the code. These contracts share the same interfaces, so only the contract names have changed, but entities, variables and interfaces in the old contract code remain:
+
+New: `FLP.sol` — Old: HLP, IHLP
+New: `FlexTradeCredits.sol` — Old: TraderLoyaltyCredit, ITraderLoyaltyCredit, TLC
+New: `FTCHook.sol` — Old: ITLCHook, TLCHook.sol
+
 ## Architecture
 `v2-evm` uses handler-service-storage pattern, this pattern ensures a clear separation of concerns and promotes modularity.
 
