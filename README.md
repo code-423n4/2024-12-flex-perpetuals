@@ -229,7 +229,7 @@ docker run -it -v=$(pwd):/app -w=/app node:18 /bin/bash
 [docker]:# ~/.foundry/bin/foundryup
 [docker]:# ~/.foundry/bin/forge test --no-match-path='test/{fp-fork,fork}/*'
 ```
-To run gas benchmarks
+To run gas benchmarks (warning: long-running)
 ```bash
 [docker]:# ~/.foundry/bin/forge test --gas-report --no-match-path='test/{fp-fork,fork}/*'
 ```
