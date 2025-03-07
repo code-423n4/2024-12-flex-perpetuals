@@ -1,0 +1,503 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-PUBLIC / flex-perpetuals-dec
+==============================================================
+
+[12/12/2024 16:28] thebrittfactor (pinned)
+👋 Hello and welcome to the **$25,000 in USDC Flex Perpetuals** audit channel!
+
+📆 Audit opens Friday, 13 December 2024 (20:00 UTC) and runs through Friday, 20 December 2024 (20:00 UTC) (7 days).
+
+Please give a warm welcome to the Flex Perpetuals team, particularly @Yuriy and @FlexDev, who will be available for questions either here in the channel or via a PRIVATE thread in the GMT-4 and GMT+2 timezone(s). 
+
+🤖 **Documentation bot assistance:** For general questions about the codebase, give our documentation bot a try, by tagging `@Docs Wolf` in any thread (private or public) and asking your question. The bot will make its best attempt to answer based on the codebase and documentation, and link you to relevant resources.  
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this audit, consider enabling notifications for this channel. 🐺 ⏰
+
+Audit Page: https://github.com/code-423n4/2024-12-flex-perpetuals
+
+{Reactions}
+🔥 (3) 
+
+[12/13/2024 16:31] itsmetechjay
+Pinned a message.
+
+
+[12/14/2024 01:56] 0xlaffitte
+can i run test locally without docker
+
+
+[12/14/2024 06:12] 0xfarman
+Could you provide the token base addresses used in @FlexDev
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - flex-perpetuals-dec [1316530208840486912].txt_Files/image-5EF44.png
+
+
+[12/14/2024 10:07] 0xfarman
+do we have specific documents for inscope contracts @Yuriy @FlexDev
+
+
+[12/14/2024 11:13] fpcrypto_y_22875
+No, we don't
+
+
+[12/14/2024 11:27] fpcrypto_y_22875 (pinned)
+USDbC: 0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA
+USDC: 0x833589fcd6edb6e08f4c7c32d4f71b54bda02913
+WETH: 0x4200000000000000000000000000000000000006
+cbBTC: 0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf
+
+
+[12/14/2024 11:28] fpcrypto_y_22875
+Sure you can.
+
+
+[12/14/2024 13:23] 0xfarman
+Thank you, Could you also provide the oracle addresses we are using @Yuriy
+
+
+[12/14/2024 13:54] flexcmt
+Are you asking about EcoPyth oracle?
+
+
+[12/14/2024 13:55] flexcmt
+There is no deployed conctracts for Base Mainnet. But you can look at Base Sepolia's contracts. All the addresses are in the config: https://github.com/code-423n4/2024-12-flex-perpetuals/blob/main/configs/base.sepolia.json
+
+{Embed}
+https://github.com/code-423n4/2024-12-flex-perpetuals/blob/main/configs/base.sepolia.json
+2024-12-flex-perpetuals/configs/base.sepolia.json at main · code-42...
+Contribute to code-423n4/2024-12-flex-perpetuals development by creating an account on GitHub.
+Code4rena - ARCHIVE-PUBLIC - flex-perpetuals-dec [1316530208840486912].txt_Files/dd7ba0ee-aeb2-4a4f-829a-3c44766da6a8-25E4B
+
+
+[12/14/2024 14:21] itsmetechjay
+Pinned a message.
+
+
+[12/14/2024 14:24] mushow
+@Jay | C4 , is it possible to remove the Warden role from Yuriy, to make his name stand out in the discussion? (Warden's yellow takes over the Sponsors' purple)
+
+{Reactions}
+👍 checkmark 
+
+[12/14/2024 14:27] mushow
+Cheers!
+
+{Reactions}
+hi5 
+
+[12/14/2024 22:20] davies_0212
+> Only the changes made to the files within the defined scope need to be audited.
+
+How can I detect the changes? Which one should I compare with? @Yuriy @FlexDev
+
+
+[12/14/2024 22:32] flexcmt
+The key point here is to avoid duplicating previous audits. If you want to track the changes, the best approach would be to review those made after the dates of the prior audits.
+
+
+[12/14/2024 22:34] davies_0212
+So, this audit is for only mitigation review?
+
+
+[12/14/2024 22:39] flexcmt
+To some extent, yes. The audit is scoped to specific parts of the project rather than covering everything.
+
+
+[12/14/2024 23:58] bijan_f
+is it normal to download 1GB dependency for chainlink?
+
+
+[12/15/2024 00:00] bijan_f
+
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - flex-perpetuals-dec [1316530208840486912].txt_Files/image-925C3.png
+
+
+[12/15/2024 00:28] flexcmt
+the same for me
+
+
+[12/15/2024 13:30] shawon2212
+After I downloaded the dependencies I had run `forge build` to compile the files but I am getting this error. can anyone give me any solutions?
+`@DESKTOP-FARNRMN:~/WorkSpace/2024-12-flex-perpetuals$ forge build
+[⠒] Compiling...
+[⠢] Compiling 475 files with Solc 0.8.18
+[⠰] Installing Solc version 0.8.18
+[⠑] Successfully installed Solc 0.8.18
+Error: solc exited with signal: 9 (SIGKILL)
+<empty output>`
+
+
+[12/15/2024 14:22] flexcmt
+what forge version do you use?
+```
+root@ceb71e26bb46:/app# ~/.foundry/bin/forge --version
+forge 0.2.0 (233bff2 2024-12-15T00:25:31.568256602Z)
+```
+
+
+[12/15/2024 14:28] shawon2212
+I use this version `forge 0.2.0 (c13d42e 2024-11-19T00:21:45.549458851Z)`
+
+
+[12/15/2024 14:54] flexcmt
+Is it possible that you are run out of ram or some resources? This project is big. My docker container goes up to 2Gb RAM on first run.
+
+
+[12/15/2024 14:56] 0xfarman
+@Shawon  You can try specific test it's running fine, I was also getting error while compiling all.
+
+
+[12/15/2024 14:58] shawon2212
+No. My ram usage goes upto 87% while compiling
+
+
+[12/15/2024 14:58] shawon2212
+Okay. Thanks
+
+
+[12/15/2024 15:00] 0xfarman
+Yeah it's big project lot's of things to compile. @Shawon
+
+{Reactions}
+👍 
+
+[12/15/2024 15:04] flexcmt
+Can suggest try to skip test compilation for the first build
+```
+~/.foundry/bin/forge build --skip test
+```
+but it took 2.3Gb for docker container for my any way
+
+{Reactions}
+❤️ 
+
+[12/15/2024 19:16] kyosi2963
+Does the repo include the fixed code or we need to compare everything with the previous audit reports ?
+
+
+[12/15/2024 19:18] flexcmt
+Yes, it includes fixed code. Previous audits were done in 2023.
+
+{Reactions}
+👍 
+
+[12/15/2024 19:18] kyosi2963
+Thanks 🙏
+
+{Reactions}
+👍 
+
+[12/16/2024 06:54] francise._
+@kyosi You're really doing everything 🫡
+
+
+[12/16/2024 14:38] kyosi2963
+Trying my best, but i am still far from where i want to be 😄
+
+{Reactions}
+🤝 (2) 
+
+[12/17/2024 16:50] harry_cryptodev
+anyone can let me know what does `intentHandler.sol` do?
+
+
+[12/17/2024 16:52] flexcmt
+Started a thread.
+
+
+[12/17/2024 16:56] flexcmt
+The IntentHandler.sol is a smart contract designed to securely and efficiently manage and execute user intents related to trading operations. It processes user's signed trading orders that are generated and signed on the client side using JavaScript.
+
+
+[12/17/2024 18:44] harry_cryptodev
+thanks
+
+
+[12/19/2024 14:30] tumelo_crypto
+hey just to get some clarity, if a function in a contract that is in scope has an error that will affect a contract that is out of scope, is that bug valid?
+
+
+[12/19/2024 16:34] flexcmt
+yes it is
+
+{Reactions}
+👍 
+
+[12/20/2024 20:02] C4
+**🚨 AUDIT ALERT**
+
+@🐺Wardens The **Flex Perpetuals** audit is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks.
+
+
+[12/20/2024 20:13] kann_p
+anyone submitted anything
+
+
+[12/20/2024 20:13] kann_p
+?
+
+
+[12/20/2024 20:21] 0xbrett8571
+There are 235 total submissions.
+
+{Reactions}
+👍 (2) 
+
+[12/20/2024 20:21] mushow
+oh not that much compared to other contests
+
+{Reactions}
+✅ 
+
+[12/20/2024 20:22] 0xbrett8571
+secondswapp has 1000+ submission
+
+
+[12/20/2024 20:24] kann_p
+Secondswap has been audited by more people also had more stuff to break
+
+
+[12/20/2024 20:25] kann_p
+I dont think that many people started this contest. Personally me I started it 3 h before the end just for practise to see how it looks like
+
+
+[12/21/2024 04:13] 0xfarman
+235 for this contest huge 🫡
+
+
+[01/04/2025 14:13] 0xfarman
+Is the judge review disputed reports?
+
+
+[01/06/2025 15:36] thebrittfactor
+The judge is currently working through their review of all reports.
+
+{Reactions}
+👍 
+
+[01/06/2025 16:47] davidjohn241018
+how can I see the all submited reports?
+
+
+[01/06/2025 17:03] thebrittfactor
+Currently, only SR wardens are able to view submissions during this time. Keep an eye out on the audit channel as you'll be tagged in if you win an award.
+
+
+[01/14/2025 04:03] 0xfarman
+@thebrittfactor | C4  Hi, By when can we expect the result to be out?
+
+
+[01/14/2025 09:10] chainsentry
+
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - flex-perpetuals-dec [1316530208840486912].txt_Files/feyresmaid-07EE0.mov
+
+{Reactions}
+10_10 
+
+[01/14/2025 14:46] thebrittfactor
+We're close! I anticipate it could be later this week/early next.
+
+{Reactions}
+👍 
+
+[01/17/2025 10:42] 0xpetern
+Will result be out before the upcoming maintenance on 20th?
+
+
+[01/23/2025 06:28] 0xpetern
+Wen result?
+
+
+[01/23/2025 07:02] chainsentry
+Turns out it wasn’t either
+
+
+[01/23/2025 07:18] 0xpetern
+This should be out already.
+
+I can't understand what could be delaying it.
+
+{Reactions}
+🥲 (2) 
+
+[01/23/2025 17:27] thebrittfactor
+🤑 🎉  Awards for **Flex Perpetuals**:
+
+$17,996.59 USDC » @Farman 
+$862.48 USDC »    @Sparrow 
+$63.04 USDC » @Alix40 
+$62.48 USDC » @0xpetern
+$62.48 USDC » @kodyvim
+$62.48 USDC » @lightoasis
+$62.48 USDC » @DharkArtz
+$62.48 USDC » @!Kann
+$62.48 USDC » @PCProdigy
+$62.48 USDC » @Abhan1041
+$62.48 USDC » @Matin
+$62.48 USDC » @tpiliposian
+$62.48 USDC » @Mushow
+$62.48 USDC » @smbv-1923
+$62.48 USDC » @MSaptarshi
+$62.48 USDC » @ABAIKUNANBAEV
+$62.48 USDC » @dic0de
+$62.48 USDC » @...
+$62.48 USDC » @0xlucky45
+$62.48 USDC » @zanderbyte
+$62.48 USDC » @hals
+$62.48 USDC » @John_Femi
+$62.48 USDC » @mael
+$62.48 USDC » @Augustine
+$62.48 USDC » @mgf15
+
+{Reactions}
+🥲 
+
+[01/23/2025 17:27] thebrittfactor
+$62.48 USDC » @0x_air
+$62.48 USDC » PolarizedLight (@Auditor-Nate and @ChaseTheLight)
+$62.48 USDC » @Rhaydden
+$62.48 USDC » @y51r
+$62.48 USDC » @bharg4v
+$62.48 USDC » @oxait
+$62.48 USDC » NexusAudits (@cheatc0d3 and @zxnnx)
+$62.48 USDC » @Newspace
+$1.40 USDC » @Waydou
+$1.40 USDC » @Tumelo_Crypto
+$0.93 USDC » @vesko210
+
+🏁 Findings summary
+--------------------------------------
+0 High risk findings
+2 Med risk findings
+78 wardens contributed
+
+Top Hunter: farman1094
+Top Gatherer: The Top Gatherer for this audit was a 33-way tie, so the bonus has been distributed equally.
+Top QA report: Sparrow
+
+Awards will be distributed on Polygon within the next week. Congratulations all!  💸 💸 💸
+
+⚠️ Awardees, be sure to [complete your tax reporting info](https://docs.code4rena.com/awarding/incentive-model-and-awards/awarding-process#tax-information-for-code4rena-contributors-wardens-judges-etc) if you haven't already. This must be completed within 30 days (i.e. before Sunday, 23 February 2025) to receive your award distribution for this audit.
+
+The leaderboard will be updated at a later date with these audit results. 
+
+*Note: If you participated in this audit and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+andbang (5) 
+
+[01/23/2025 17:47] 0xhuntoor
+iconic
+
+
+[01/23/2025 18:37] lightoasis
+First top 10 .
+Congrats @Farman 
+GG everyone. 👏
+
+{Reactions}
+10_10 (4) 
+
+[01/24/2025 00:28] 0xfarman
+Thank you.
+
+{Reactions}
+💯 (2) 
+
+[01/24/2025 03:27] thehxnz
+Wait how did 2 med resulted in this?
+
+
+[01/24/2025 03:27] thehxnz
+is this how "duplicates are rewarded" competitions work?
+
+{Reactions}
+👍 
+
+[01/24/2025 09:33] 0xlaffitte
+where can i see the findings?
+
+
+[01/25/2025 02:04] pro_king1
+@Farman Congrats bro
+
+{Reactions}
+👍 
+
+[01/25/2025 13:07] mgf15
+Report is not public yet
+
+
+[01/26/2025 04:14] oceansky
+only 1 unique medium makes the difference  😅  Congrats to the winner !
+
+
+[01/27/2025 04:14] 0xlaffitte
+how much days it should  take to publish the report
+
+
+[01/28/2025 12:53] bytes032
+damn @Farman gj
+
+{Reactions}
+💯 
+
+[01/28/2025 13:59] 0xfarman
+Thank you!! @bytes032
+
+
+[01/29/2025 08:29] blackunicorn_82555
+Could you help me please, If I reported issue as "High" but it's decresead to Med - will be I disqualified?
+
+
+[01/30/2025 01:55] 0xstalin
+no, you are good, it would be awarded if its a valid medium
+
+
+[01/30/2025 16:50] h4ckc4t
+I have completed my tax info when can I expect to be paid to my wallet?
+
+{Reactions}
+🧵 ✅ 
+
+[01/30/2025 16:56] thebrittfactor
+Awards are sent in two batches, which are dependent on when tax info is submitted. More details [here](https://docs.code4rena.com/awarding/incentive-model-and-awards/awarding-process#award-distribution-requirements-and-schedule). If you just submitted, you'll be included in the second batch that occurs ~30 days after awards are announced.
+
+
+[01/30/2025 20:41] 0x23r0
+can I dm?
+
+{Reactions}
+🧵 ✅ 
+
+[02/24/2025 15:44] itsmetechjay
+ℹ️ This channel is pending archive.   As a result, any private threads will be permanently deleted in 03/07/2025 15:39. Please make sure to grab anything you might need before then.
+
+
+[02/25/2025 01:27] pcprodigy
+I have my tax accepted after announcement , is the 2nd batch any time soon.
+
+{Reactions}
+🧵 ✅ 
+
+[02/25/2025 13:47] thebrittfactor
+I anticipate these could be sent out within the next week. Appreciate your patience!
+
+{Reactions}
+🫡 
+
+[03/06/2025 23:59] itsmetechjay
+ℹ️ Reminder: this channel will be deleted after 24 hours.
+
+
+==============================================================
+Exported 84 message(s)
+==============================================================
